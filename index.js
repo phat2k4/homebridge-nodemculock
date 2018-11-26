@@ -5,7 +5,7 @@ module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
 
-    homebridge.registerAccessory("homebridge-esplock", "EspLock", LockAccessory);
+    homebridge.registerAccessory("homebridge-nodemculock", "NodemcuLock", LockAccessory);
 }
 
 function LockAccessory(log, config) {
