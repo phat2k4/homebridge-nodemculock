@@ -143,14 +143,6 @@ LockAccessory.prototype.setState = function(state, callback) {
                 .setCharacteristic(Characteristic.BatteryLevel, batt);
 
             callback(null); // success
-
-            var self = this;
-            setTimeout(function() {
-                if (currentState == Characteristic.LockTargetState.UNSECURED) { 
-                    self.lockservice
-                        .setCharacteristic(Characteristic.LockTargetState, Characteristic.LockTargetState.SECURED);
-                }
-            }, 5000);
         }
         else {
             this.log("Error '%s' setting lock state. Response: %s", err, body);
